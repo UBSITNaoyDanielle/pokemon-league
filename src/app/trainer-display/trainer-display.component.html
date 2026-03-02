@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Pokemon League Registry</h1>
+    @for (trainer of trainerService.trainers(); track trainer.name){
+        <div class="trainer-card">
+            <h2>Trainer: {{ trainer.name }}</h2>
+            <ul>
+                @for (pokemon of trainer.team; track $index){
+                    <ul>
+                        <li>
+                            <strong> {{ pokemon }} </strong>
+                            <small> Held item: {{trainer.items[$index]}}</small>
+                        </li>
+                    </ul>
+                }
+            </ul>
+        </div>
+    }
+</div>
